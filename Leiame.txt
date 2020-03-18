@@ -1,0 +1,59 @@
+Descrição:
+
+Classe Program1: main
+Classe Matricula: Metodos
+
+class Matricula:
+
+1:	Armazena os métodos para serem instanciados na classe program1
+2:	Metodo "read", le os arquivos e retorna uma string com o conteudo dos arquivos.
+	Utilizando o try, catch para tratar as exceções do arquivo não poder ser lido ou não ser encontrado. 
+3:	Metodo "write", le o conteudo de um ArrayList, e coloca esse conteudo dentro de um arquivo.txt.
+	Sempre pulando linhas a cada "i" do for, para separar as matriculas conforme pedido.
+4: 	Metodo "conversaoHexa", converte a matricula em hexadecimal, e adiciona esse dígito no final da matricula.
+	Para isso, o metodo pega cada substring da matricula, converte para inteiro e faz os calculos.
+	Depois devolve para a lista como String.
+5:	Metodo "conversaoHexa2", faz exatamenta a mesma coisa da anterior, porém recebe uma matricula já com o dígito Hexadecimal, para verificação posterior.
+6:	Metodo "verificacao", verifica se os digitos do arquivo.txt recebido são de fato a conversao hexadecimal das matriculas.
+	Para isso, paga cada digito como substring, transforma de hexadecimal em decimal e faz a comparacao.
+	E assim da um "set" para inserir a matricula junto da msg de verdadeiro ou falso.
+
+class Program1:
+
+Linhas:
+
+// PARTE 1 - GERANDO DIGITOS HEXADECIMAIS NAS MATRICULAS
+
+12:	Pega o nome do arquivo "matriculasSemDV.txt" e armazena em uma variável tipo String "arq".
+13:	Le esse nome com o metodo "read" e adciona o texto em forma de String na variavel "mat".
+15:	Criados um Vetor de String e um Arraylist, faz com que o vetor de String receba o "split" da String "mat" e adcione esse vetor em um ArrayList, para facilitar o trablha posterior.
+	"split" pega cada string a partir de um separador(no caso a quebra de linha) e separa em posicoes de um vetor.
+29:	O ArrayList recebe o metodo de conversao hexadecimal instanciado pela classe "Matricula".
+31:	Como isso, utilizo o metodo "write" para ler esse ArrayList e coloca-lo em um arquivo.txt (MatriculasComDV.txt).
+obs:	Para visualizacao imediata, cada arquivo recebido ou criado, aparece seu conteudo na tela, um uma mensagem anterior explicando o que é.
+
+// PARTE 2 - VERIFICANDO MATRICULAS
+
+45:	Utilizo dos mesmos passoas para receber o arquivo e ler e guardalo em um ArrayList, gerando alguns outros ArrayList de auxilio.
+	Como o ArrayList: comp (para comparacao dos dados) e ArrayList: auxiliar (para auxiliar nos metodos).
+65:	O ArrayList "auxiliar", recebe o mesmo conteudo do ArrayList paraVerif, justamente para auxiliar no metodo. 
+81:	O ArrayList "comp" recebe o metodo "conversaoHexa" instanciado pela classe "Matricula", e passado como parametro para o metodo o ArrayList "auxiliar", para que o "paraVerif" nao seja alterado.
+86:	Finalmente o ArrayList "paraVerif" recebe o metodo "verificacao" instaciado pela classe "Matricula".
+88:	Instanciado o metodo "write" com parametros do nome do arquivo.txt("matriculasVerificadas.txt") e o ArrayList ja com as alteracoes de verdadeiro ou falso, recebidas no metodo anterior.
+obs:	Para visualizacao imediata, cada arquivo recebido ou criado, aparece seu conteudo na tela, um uma mensagem anterior explicando o que é.
+
+Como Usar:
+
+// Codigo em Java 11, ide: Eclipse
+
+1:	Para ter certeza da veracidade do programa, exclua os arquivos gerados da pasta do projeto.
+	Deixando apenas os arquivos a serem lidos.
+2:	Execute o codigo na IDE.
+3:	Os arquivos gerados aparecerao nas pasta do projeto com as matriculas pedidas.
+4:	Unica observacao, se quiser alterar o nome do arquivo a ser lido pelo programa, tera que alterar o nome do mesmo no código.
+
+
+
+
+
+		
